@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Setup</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font:14px/1.5 system-ui,sans-serif;background:#0d0d0d;color:#e0e0e0;padding:16px;max-width:420px;margin:auto}h1{font-size:20px;font-weight:600;color:#fff;margin-bottom:4px}.s{font-size:11px;color:#555;margin-bottom:20px}label{display:block;font-size:11px;color:#777;margin-bottom:3px}input,textarea{width:100%;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:4px;color:#e0e0e0;font:14px system-ui,sans-serif;padding:8px 10px;margin-bottom:12px;outline:none}input:focus,textarea:focus{border-color:#4a9eff}textarea{resize:vertical;min-height:64px}input[type=number]{-moz-appearance:textfield}button{width:100%;background:#4a9eff;border:none;border-radius:4px;color:#fff;font:600 14px system-ui,sans-serif;padding:10px;cursor:pointer}button:active{background:#2a7ee0}hr{border:none;border-top:1px solid #1e1e1e;margin:24px 0}.h{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#555;margin-bottom:10px}.c{background:#141414;border:1px solid #1e1e1e;border-radius:4px;padding:12px}.r{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #1e1e1e;font-size:13px}.r:last-child{border-bottom:none}.r span:first-child{color:#555;font-size:11px}.r span:last-child{word-break:break-all;text-align:right;max-width:60%}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#22c55e;margin-right:6px;vertical-align:middle}</style>
+<h1>Device Setup</h1><p class=s>Configure your device and network.</p>
+<form method=POST action=/save>
+<label>Company</label><input name=co type=text placeholder="Acme Corp" value="{{CO}}">
+<label>WiFi SSID</label><input name=ssid type=text placeholder=MyNetwork value="{{SSID}}">
+<label>WiFi Password</label><input name=pass type=password placeholder=&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull; value="{{PASS}}">
+<label>Device Name</label><input name=dev type=text placeholder=led-ctrl-01 value="{{DEV}}">
+<label>LED Count</label><input name=leds type=number min=1 max=9999 placeholder=60 value="{{LEDS}}">
+<label>Comments</label><textarea name=cmnt placeholder="Optional notes...">{{CMNT}}</textarea>
+<button type=submit>Save &amp; Restart</button>
+</form>
+<hr>
+<div class=h><span class=dot></span>Current Config</div>
+<div class=c>
+<div class=r><span>Company Name</span><span>{{CO}}</span></div>
+<div class=r><span>SSID</span><span>{{SSID}}</span></div>
+<div class=r><span>Password</span><span>{{PASS_MASK}}</span></div>
+<div class=r><span>Device</span><span>{{DEV}}</span></div>
+<div class=r><span>LEDs</span><span>{{LEDS}}</span></div>
+<div class=r><span>Comments</span><span>{{CMNT}}</span></div>
+</div>
